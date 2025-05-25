@@ -1,0 +1,271 @@
+ /* 
+** A Totally Real Project by a total "Software Engineer"
+@ author - Ngala21
+*
+*/
+
+/* Google Fonts */
+/* @import url('https://fonts.googleapis.com/css2?family=Source+Sans+3:ital,wght@0,200..900;1,200..900&display=swap'); */
+
+/* CSS RESET */
+* {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    outline: none;
+    text-decoration: none;
+    list-style: none;
+    box-sizing: border-box;
+    cursor: auto;
+}
+
+/* CSS VARIABLES */
+:root {
+  --color-primary: #ff6565;
+  --color-secondary: #071629;
+  --color-success: #979797;
+
+  --color-white: #fff;
+  --color-black: #000;
+
+  --container-width-lg: 1000px;
+  --container-width-md: 720px;
+  --container-width-sm: 480px;
+
+  --transition: all 400ms ease;
+}
+
+/* ===== General Styles ===== */
+body {
+    background: #edf6f9;
+    font-family: CircularStd-Book,Arial,Helvetica,sans-serif;
+    scroll-behavior: smooth !important;
+}
+
+h2 {
+    font-size: 3rem;
+    text-align: center;
+    margin: 3rem;
+    color: #ff1e56;
+}
+
+h3 {
+  font-size: 2rem;
+  margin-top: 3rem;
+  margin-bottom: 3rem;
+}
+  
+.btn {
+  margin: 1rem;
+  padding: 15px 40px;
+  border: 1px solid #000;
+  border-radius: 38px;
+  color: #fff;
+  cursor: pointer;
+}
+
+.btn:hover {
+  color: #ffffff;
+  background-color: #000;
+  transition: 0.3s ease-in-out;
+}
+
+.btn-contact {
+  font-weight: 700;
+  letter-spacing: 1.5px;
+}
+
+/*  
+  img {
+    border-radius: 10px;
+  }
+  
+  img::hover {
+    border-radius: 3px solid red;
+  }
+/*    */
+  /* .container {
+    background-image:url(images/headphones_hero_1.jpg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size:cover;
+    height:fit-content;
+  
+  } */ */
+
+/* ================ NAVIGATION BAR ================ */
+nav {
+  width: 100vw;
+  height: 4rem;
+  position: fixed;
+  top: 0;
+  z-index: 11;
+  overflow: hidden;
+}
+
+.nav__container {
+  background: #ff1e56;
+  padding: 1rem;
+  height: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+ 
+}
+
+.nav__container-who {
+  margin-left: 5rem;
+  display: flex;
+  align-items: center;
+}
+
+.nav__container-image {
+  width: 4rem;
+  height: 4rem;
+  border-radius: 38px;
+}
+
+nav button {
+  display: none;
+}
+
+.nav__container a {
+  margin-left: 2rem;
+  font-weight: 700;
+  color: #fff;
+}
+.nav__menu {
+  margin-right: 6rem;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  font-weight: bold;
+}
+
+/* ================ NAVIGATION BAR END ================ */
+  
+/* ===== INTRO SECTION ===== */
+header {
+  height: 90vh;
+  /* margin: 0 auto; */
+  border: 5px solid red;
+}
+
+.intro {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem;
+  align-items: center;
+  padding: 12rem 2rem;
+  /* margin-inline: auto; */
+}
+
+.intro--1 {
+  line-height: 1.2;
+  /* padding-bottom: 2rem; */
+  text-align: center;
+
+}
+
+.intro--1 span {
+  font-size: 70px;
+  color: #ff1e56;
+}
+
+.intro--1 p {
+  margin-top: 0.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.btn-primary {
+  background-color: #ff1e56;
+}
+
+.btn-secondary {
+  color: #ffffff;
+  background-color: #000000;
+}
+
+.btn-secondary:hover {
+  color: #ffffff;
+  background-color: #ff1e56;
+}
+
+.btn-secondary a {
+  color: #ffffff;
+}
+
+.intro--2 img {
+  /* height: 200px; */
+  width: auto;
+  margin-bottom: 3rem;
+  border-radius: 38px;
+  object-fit: cover;
+  transition: var(--transition);
+}
+
+.intro--2 img:hover  {
+  transform: scale(0.9);
+  opacity: 0.4;
+}
+
+/* ===== INTRO SECTION END ===== */
+
+/* ===== ABOUT SECTION ===== */ 
+.about {
+  margin-top: 5rem;
+  /* margin-left: 10rem; */
+}
+
+.about__container {
+  min-height: 100vh;
+}
+
+.about__container-info {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  margin: 0 auto;
+  text-align: center;
+  padding: 2rem 5rem;
+  gap: 2rem;
+}
+
+video {
+  border-radius: 38px;
+}
+
+.description {
+  margin-top: 4rem;
+}
+
+/* ===== ABOUT SECTION END ===== */
+
+/* ===== PROJECTS SECTION ===== */
+.projects {
+  min-height: 100vh;
+}
+
+.pi {
+  text-align: center;
+}
+.works {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 5rem;
+  text-align: center;
+  margin: 5px auto;
+}
+/* ===== PROJECTS SECTION END ===== */
+
+/* ===== RESPONSIVE CSS ===== */
+@media screen and (max-width:768px) {
+    body, html {
+        cursor: pointer;
+    }   
+}
+/* ===== RESPONSIVE CSS ===== */
+
+body, html {
+    cursor: pointer;
+}
+

@@ -1,0 +1,162 @@
+* {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    outline: none;
+    text-decoration: none;
+    list-style: none;
+    box-sizing: border-box;
+    /* cursor: auto; */
+}
+
+:root {
+    --color-primary: ;
+    --color-success: ;
+    --color-warning: ;
+    --color-danger: ;
+    --color-danger-variant: ;
+    --color-white: ;
+    --color-light: ;
+    --color-black: ;
+    --color-bg: ;
+    --color-bg1: ;
+    --color-bg2: ;
+
+    --container-width-lg: 76%;
+    --container-width-md: 90%;
+    --container-width-sm: 94%;
+
+    --transition-all-ms: all 400ms ease;
+}
+
+body {
+    font-family: ;
+    line-height: ;
+    color: var(--color-primary);
+    background: var();
+}
+
+.container {
+    width: var(--container-width-lg);
+    margin: 0 auto;
+}
+
+section {
+    padding: 6rem 0;
+
+}
+
+section h2 {
+    text-align: center;
+    margin-bottom: 4rem;
+}
+
+h1, 
+h2, 
+h3, 
+h4, 
+h5 {
+    line-height: 1.2;
+}
+
+h1 {
+    font-size: 2.4rem;
+}
+
+h2 {
+    font-size: 2rem;
+}
+
+h3 {
+    font-size: 1.6rem; 
+}
+
+h4 {
+    font-size: 1.3rem;
+}
+
+a {
+    color: var();
+}
+
+.btn {
+
+}
+
+.btn:hover {
+
+}
+
+/* ================ NAVIGATION BAR ================ */
+nav {
+    background: #ff1e56;
+    width: 100vw;
+    height: 6rem;
+    position: fixed;
+    top: 0;
+    z-index: 11;
+}
+
+.nav__container {
+    height: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.nav__container-who {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+}
+
+.nav__container-image {
+    width: 4rerm;
+    height: 4rem;
+    border-radius: 38px;
+}
+nav button {
+    display: none;
+}
+
+.nav__menu {
+    display: flex;
+    align-items: center;
+    gap: 4rem;
+}
+
+.nav__menu a {
+    font-size: 1.5rem;
+    transition: var(--transition);
+}
+
+.nav__menu a:hover {
+    color: var ();
+}
+
+/* ================ NAVIGATION BAR END ================ */
+
+/* ================ HEADER ================ */
+header {
+    position: relative;
+    top: 10rem;
+    overflow: hidden;
+    height: 70vh;
+    margin-bottom: 5rem;
+}
+
+
+.header__container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    align-items: center;
+    gap: 5rem;
+    height: 100%;
+    margin-inline: auto;
+}
+
+.header__left.job_description {
+    max-width: 1rem;
+}
+/* ================ HEADER ================ */
+
