@@ -45,14 +45,14 @@ body {
 h2 {
     font-size: 3rem;
     text-align: center;
-    margin: 3rem;
+    margin: 2rem;
     color: #ff1e56;
 }
 
 h3 {
   font-size: 2rem;
-  margin-top: 3rem;
-  margin-bottom: 3rem;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
 }
   
 .btn {
@@ -226,7 +226,7 @@ header {
   grid-template-columns: repeat(3, 1fr);
   margin: 0 auto;
   text-align: center;
-  padding: 2rem 5rem;
+  padding: 2rem 4rem;
   gap: 2rem;
 }
 
