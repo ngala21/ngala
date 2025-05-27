@@ -45,14 +45,13 @@ body {
 h2 {
     font-size: 3rem;
     text-align: center;
-    margin: 2rem;
+    margin: 1rem;
     color: #ff1e56;
 }
 
 h3 {
   font-size: 2rem;
-  margin-top: 1rem;
-  margin-bottom: 1rem;
+  margin: 1rem;
 }
   
 .btn {
@@ -221,6 +220,13 @@ header {
   min-height: 100vh;
 }
 
+.line-hr {
+  width: 120px;
+  height: 5px;
+  background-color: #ff1e56;
+  margin: 0 auto;
+}
+
 .about__container-info {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -247,6 +253,7 @@ video {
 
 .pi {
   text-align: center;
+  margin-top: 1rem;
 }
 .works {
   display: grid;
