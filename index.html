@@ -6,9 +6,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Home · Ngala Mike</title>
     <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+
+    <!-- Root CSS -->
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+    <!-- ========== PAGE NAVIGATION =========== -->
     <nav>
         <div class="container nav__container">
             <div class="nav__container-who">
@@ -17,15 +20,17 @@
             </div>
 
             <ul class="nav__menu">
-                <li><a href="http://">About</a></li>
-                <li><a href="http://">My Works</a></li>
-                <li><a href="http://">Contact</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#projects">My Works</a></li>
+                <li><a href="#contact">Contact</a></li>
             </ul>
             <button id="open-menu-btn"></button>
             <button id="close-menu-btn"></button>
         </div>
     </nav>
-    
+    <!-- ========== PAGE NAVIGATION END =========== -->
+
+    <!-- ========== HEADER =========== -->
     <header>
         <div class="intro">
             <div class="intro--1">
@@ -41,8 +46,10 @@
             </div>
         </div>
     </header>
+    <!-- ========== HEADER END =========== -->
 
    <main>
+    <!-- ========== ABOUT =========== -->
         <section class="about">
             <h2>Here's what I do</h2>
             <div class="line-hr"></div>
@@ -67,9 +74,7 @@
                             <source src="development.mp4" type="video/mp4">
                             Your browser does not support the video tag.
                         </video>
-                        <p class="description">what does developing entail</p>
-    
-                        
+                        <p class="description">what does developing entail</p>    
                     </div>
                         
                     <div>
@@ -81,45 +86,137 @@
                         </video>
                         <p class="description">what does deploying entail</p>
                     </div>
-
                 </div>
-            </div>
-            
+            </div>    
         </section>
+        <!-- ========== ABOUT END =========== -->
 
+        <!-- ========== PROJECTS =========== -->
         <section class="projects">
             <h2>My Projects</h2>
             <div class="line-hr"></div>
             <h4 class="pi">Here are some exciting projects that I've build so far:</h4>
             <div class="container projects__container">
-                <div class="works">
-                    <div class="project-1">
-                        <img src="muscular-gymnast-torso-outline-svgrepo-com.svg" alt="">
-                        <h3>Master File</h3>
-                        <h4>Excel</h4>
-                        <p>Project Description</p>
+                <div class="projects__grid">
+                    <article class="project-card">
+                        <div class="project-image">
+                            <a href="[Link to Live Demo]" target="_blank">
+                                <img src="[path/to/project-screenshot-or-gif.png]" alt="[Project Name] Screenshot" loading="lazy">
+                            </a>
+                            </div>
+                            <div class="project-info">
+                                <h3>[Project Name]</h3>
+                                <p class="project-description">
+                                    A concise, one-sentence summary of what the project does and its main purpose.
+                                    (e.g., "A web application to manage tasks with real-time updates and user authentication.")
+                                </p>
+                                <div class="project-tech-stack">
+                                    <span>HTML</span>
+                                    <span>CSS</span>
+                                    <span>JavaScript</span>
+                                    <span>React</span>
+                                    <span>Node.js</span>
+                                    <span>MongoDB</span>
+                                    </div>
+                                <div class="project-links">
+                                    <a href="[Link to Live Demo]" target="_blank" class="btn btn-small btn-live">Live Demo <i class="fas fa-external-link-alt"></i></a>
+                                    <a href="[Link to GitHub Repo]" target="_blank" class="btn btn-small btn-github">GitHub <i class="fab fa-github"></i></a>
+                                </div>
+                        </div>
+                    </article>
+
+                    <article class="project-card">
+                        <div class="project-image">
+                            <a href="[Link to Live Demo]" target="_blank">
+                                <img src="[path/to/project-screenshot-or-gif.png]" alt="[Project Name] Screenshot" loading="lazy">
+                            </a>
+                            </div>
+                            <div class="project-info">
+                                <h3>[Project Name]</h3>
+                                <p class="project-description">
+                                    A concise, one-sentence summary of what the project does and its main purpose.
+                                    (e.g., "A web application to manage tasks with real-time updates and user authentication.")
+                                </p>
+                                <div class="project-tech-stack">
+                                    <span>HTML</span>
+                                    <span>CSS</span>
+                                    <span>JavaScript</span>
+                                    <span>React</span>
+                                    <span>Node.js</span>
+                                    <span>MongoDB</span>
+                                    </div>
+                                <div class="project-links">
+                                    <a href="[Link to Live Demo]" target="_blank" class="btn btn-small btn-live">Live Demo <i class="fas fa-external-link-alt"></i></a>
+                                    <a href="[Link to GitHub Repo]" target="_blank" class="btn btn-small btn-github">GitHub <i class="fab fa-github"></i></a>
+                                </div>
+                        </div>
+                    </article>
+
+                    <article class="project-card">
+                        <div class="project-image">
+                            <a href="[Link to Live Demo]" target="_blank">
+                                <img src="[path/to/project-screenshot-or-gif.png]" alt="[Project Name] Screenshot" loading="lazy">
+                            </a>
+                            </div>
+                            <div class="project-info">
+                                <h3>[Project Name]</h3>
+                                <p class="project-description">
+                                    A concise, one-sentence summary of what the project does and its main purpose.
+                                    (e.g., "A web application to manage tasks with real-time updates and user authentication.")
+                                </p>
+                                <div class="project-tech-stack">
+                                    <span>HTML</span>
+                                    <span>CSS</span>
+                                    <span>JavaScript</span>
+                                    <span>React</span>
+                                    <span>Node.js</span>
+                                    <span>MongoDB</span>
+                                    </div>
+                                <div class="project-links">
+                                    <a href="[Link to Live Demo]" target="_blank" class="btn btn-small btn-live">Live Demo <i class="fas fa-external-link-alt"></i></a>
+                                    <a href="[Link to GitHub Repo]" target="_blank" class="btn btn-small btn-github">GitHub <i class="fab fa-github"></i></a>
+                                </div>
+                        </div>
+                    </article>
+
+                    <article class="project-card">
+                        <div class="project-image">
+                            <a href="[Link to Live Demo]" target="_blank">
+                                <img src="[path/to/project-screenshot-or-gif.png]" alt="[Project Name] Screenshot" loading="lazy">
+                            </a>
+                            </div>
+                            <div class="project-info">
+                                <h3>[Project Name]</h3>
+                                <p class="project-description">
+                                    A concise, one-sentence summary of what the project does and its main purpose.
+                                    (e.g., "A web application to manage tasks with real-time updates and user authentication.")
+                                </p>
+                                <div class="project-tech-stack">
+                                    <span>HTML</span>
+                                    <span>CSS</span>
+                                    <span>JavaScript</span>
+                                    <span>React</span>
+                                    <span>Node.js</span>
+                                    <span>MongoDB</span>
+                                    </div>
+                                <div class="project-links">
+                                    <a href="[Link to Live Demo]" target="_blank" class="btn btn-small btn-live">Live Demo <i class="fas fa-external-link-alt"></i></a>
+                                    <a href="[Link to GitHub Repo]" target="_blank" class="btn btn-small btn-github">GitHub <i class="fab fa-github"></i></a>
+                                </div>
+                        </div>
+                    </article>
+
                     </div>
-                    <div class="project-1">
-                        <img src="muscular-gymnast-torso-outline-svgrepo-com.svg" alt="">
-                        <h3>Master File</h3>
-                        <h4>Excel</h4>
-                        <p>Project Description</p>
-                    </div>
-                    <div class="project-1">
-                        <img src="muscular-gymnast-torso-outline-svgrepo-com.svg" alt="">
-                        <h3>Master File</h3>
-                        <h4>Excel</h4>
-                        <p>Project Description</p>
-                    </div>
+
+                <div class="view-more-projects">
+                    <a href="https://github.com/ngala21" target="_blank" class="btn btn-primary">View More on GitHub &rarr;</a>
                 </div>
             </div>
-
-           
-            
-            
-            
+            </div>    
         </section>
+        <!-- ========== PROJECTS END =========== -->
 
+        <!-- ========== CONTACT =========== -->
         <section class="contact">
             <div class="row">
                 <h2>Let's work together</h2>
@@ -128,7 +225,9 @@
                <button class="btn btn-primary">Shoot me a message</button> 
             </div>           
         </section> 
+        <!-- ========== CONTACT END =========== -->
 
+        <!-- ========== FOOTER =========== -->
         <section class="footer">
             <ul>
                 <li><a href="mailto:ngalamike016@gmail.com">Send Email</a></li> <!-- github -->
@@ -140,9 +239,9 @@
             <p>&copy; 2025 | Ngala Mike. All Rights Reserved</p>
             <!-- social icons -->
 
-            <!-- Add a Back to Top -->
-             
+            <!-- Add a Back to Top --> 
         </section>
+        <!-- ========== FOOTER END =========== -->
    </main>
 </body>
 </html>
