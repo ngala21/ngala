@@ -248,52 +248,44 @@ video {
 /* ===== ABOUT SECTION END ===== */
 
 /* ===== PROJECTS SECTION ===== */
-.projects {
-  min-height: 100vh;
-  margin: 0 auto;
-}
-
-.projects__container {
-  
-}
-
 .pi {
   text-align: center;
   margin-top: 1rem;
   color: #474747;
 }
 
-/* --- Projects Section --- */
-/* .projects {
-  
-    padding: 6rem 0; 
-    background-color: #f8f8f8;  */
+//* --- Projects Section --- */
+.projects {
+  padding: 6rem 0; 
+  background-color: #f8f8f8; 
+}
 
 .projects h2 {
-    margin-bottom: 1rem; 
+  margin-bottom: 1rem; 
 }
 
 .section-description {
-    text-align: center;
-    max-width: 700px;
-    margin: 0 auto 4rem;
-    font-size: 1.1rem;
-    color: #555;
+  text-align: center;
+  max-width: 700px;
+  margin: 0 auto 4rem;
+  font-size: 1.1rem;
+  color: #555;
 }
 
 .projects__grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); 
+    gap: 3rem; 
     max-width: var(--container-width-lg); 
     margin: 0 auto;
-    padding: 0 1.5rem; 
+    padding: 0 1.5rem;
+    margin-top: 1rem; 
 }
 
 .project-card {
-  margin-top: 2rem;
     background-color: var(--color-white);
     border-radius: 12px;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08); 
     overflow: hidden; 
     transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
     display: flex; 
@@ -322,11 +314,10 @@ video {
 
 .project-card:hover .project-image img {
     transform: scale(1.05); 
-}
 
 .project-info {
     padding: 1.5rem;
-    flex-grow: 1;
+    flex-grow: 1; 
     display: flex;
     flex-direction: column;
     justify-content: space-between; 
@@ -338,7 +329,6 @@ video {
     margin-top: 0; 
     margin-bottom: 0.8rem;
     text-align: left; 
-}
 
 .project-description {
     font-size: 0.95rem;
@@ -357,89 +347,76 @@ video {
 }
 
 .project-tech-stack span {
-    background-color: #e0e0e0; 
+    background-color: #e0e0e0; /* Light background for tags */
     color: #444;
     padding: 0.4em 0.8em;
     border-radius: 5px;
     font-size: 0.8rem;
     font-weight: 600;
-    white-space: nowrap; 
+    white-space: nowrap; /* Prevent tags from breaking */
 }
 
 .project-links {
     display: flex;
     gap: 1rem;
-    margin-top: auto; 
+    margin-top: auto; /* Pushes links to the bottom of the card */
 }
 
 .btn-small {
     padding: 0.6rem 1.2rem;
     font-size: 0.9rem;
-    border-radius: 8px; 
+    border-radius: 8px; /* Slightly less rounded than main buttons */
+}
 
 .btn-live {
-    background-color: var(--color-primary); 
+    background-color: var(--color-primary); /* Use your primary color */
     color: var(--color-white);
     border-color: var(--color-primary);
 }
 
 .btn-live:hover {
-    background-color: darken(var(--color-primary), 10%);
-    background-color: #cc1a49; 
+    background-color: darken(var(--color-primary), 10%); /* If using Sass, else pick a darker shade */
+    background-color: #cc1a49; /* Example darker shade */
     border-color: #cc1a49;
 }
 
 .btn-github {
-    background-color: var(--color-secondary); 
+    background-color: var(--color-secondary); /* Use your secondary color or black */
     color: var(--color-white);
     border-color: var(--color-secondary);
-    margin: 0 auto;
 }
 
 .btn-github:hover {
-    background-color: darken(var(--color-secondary), 10%); 
-    background-color: #05101c; 
+    background-color: darken(var(--color-secondary), 10%); /* If using Sass */
+    background-color: #05101c; /* Example darker shade */
     border-color: #05101c;
 }
 
-
+/* Optional: View More on GitHub button */
 .view-more-projects {
     text-align: center;
     margin-top: 4rem;
 }
 
-/* @media screen and (max-width: 768px) {
+/* --- Responsive Adjustments --- */
+@media screen and (max-width: 768px) {
     .projects__grid {
-        grid-template-columns: 1fr; 
-        padding: 0 1rem; 
+        grid-template-columns: 1fr; /* Stack cards on very small screens */
+        padding: 0 1rem; /* Less padding */
     }
 
     .project-card {
-        max-width: 400px;
-        margin: 0 auto; /
+        max-width: 400px; /* Limit card width on small screens */
+        margin: 0 auto; /* Center individual cards */
     }
 
     .project-links {
-        flex-direction: column; 
+        flex-direction: column; /* Stack buttons vertically on small screens */
         gap: 0.8rem;
     }
 
     .btn-small {
-        width: 100%; 
+        width: 100%; /* Make buttons full width */
         text-align: center;
     }
-} */
-/* ===== PROJECTS SECTION END ===== */
-
-/* ===== RESPONSIVE CSS ===== */
-@media screen and (max-width:768px) {
-    body, html {
-        cursor: pointer;
-    }   
 }
-/* ===== RESPONSIVE CSS ===== */
-
-body, html {
-    cursor: pointer;
-}
-
