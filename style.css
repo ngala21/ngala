@@ -1,4 +1,4 @@
- /* 
+/*  
 ** A Totally Real Project by a total "Software Engineer"
 @ author - Ngala21
 *
@@ -179,6 +179,7 @@ header {
 
 .btn-primary {
   background-color: #ff1e56;
+   margin-bottom: 2rem;
 }
 
 .btn-secondary {
@@ -313,6 +314,7 @@ video {
 
 .project-card:hover .project-image img {
     transform: scale(1.05); 
+}
 
 .project-info {
     padding: 1.5rem;
@@ -328,6 +330,8 @@ video {
     margin-top: 0; 
     margin-bottom: 0.8rem;
     text-align: left; 
+
+}
 
 .project-description {
     font-size: 0.95rem;
@@ -428,4 +432,39 @@ video {
   border: border: 5px solid #ff1e56;
 }
 
+.shoot-message {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 /* ===== CONTACT SECTION END ===== */
+
+/* ===== FOOTER ===== */
+.socialmedia {
+  margin: 0 auto;
+  box-sizing: border-box;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  
+}
+.sa-icons {
+  margin-top: 1rem;
+  border-radius: 50px;
+  width: 100px;
+  height: 100px;
+  text-decoration: none;
+  transition: var(--transition);
+  font-size: 2em;
+  background-color: #fff;
+}
+
+.signature {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.5rem;
+  letter-spacing: 10px; 
+}
+/* ===== FOOTER SECTION END ===== */
