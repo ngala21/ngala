@@ -1,10 +1,10 @@
-/*  
+/*
 ** A Totally Real Project by a total "Software Engineer"
 @ author - Ngala21
-*
+**
 */
 
-/* Google Fonts */
+/* Google Fonts - Uncomment if you decide to use it. Make sure it's accessible. */
 /* @import url('https://fonts.googleapis.com/css2?family=Source+Sans+3:ital,wght@0,200..900;1,200..900&display=swap'); */
 
 /* CSS RESET */
@@ -16,508 +16,949 @@
     text-decoration: none;
     list-style: none;
     box-sizing: border-box;
-    cursor: auto;
+    /* Removed `cursor: auto;` as it's the default and can be overridden by specific elements */
 }
 
 /* CSS VARIABLES */
 :root {
-  --color-primary: #ff6565;
-  --color-secondary: #071629;
-  --color-success: #979797;
+    /* Updated colors for better contrast and consistency */
+    --color-primary: #ff1e56; /* Your vibrant primary color */
+    --color-secondary: #071629; /* Dark secondary, good for text/background */
+    --color-success: #979797; /* A grey, consider if it's truly a "success" color */
 
-  --color-white: #fff;
-  --color-black: #000;
+    --color-white: #fff;
+    --color-black: #000;
 
-  --container-width-lg: 1000px;
-  --container-width-md: 720px;
-  --container-width-sm: 480px;
+    /* Responsive container widths - used with `max-width` */
+    --container-width-lg: 1200px; /* Max width for large desktops */
+    --container-width-md: 960px; /* Max width for tablets/small desktops */
+    --container-width-sm: 540px; /* Max width for larger phones */
+    --container-padding: 1.5rem; /* Default horizontal padding for containers */
 
-  --transition: all 400ms ease;
+    --transition: all 400ms ease; /* Smooth transition for hover effects */
+    --border-radius-default: 8px; /* Standard rounded corners */
+    --border-radius-large: 38px; /* Larger rounded corners for specific elements */
 }
 
 /* ===== General Styles ===== */
 body {
-    background: #edf6f9;
-    font-family: CircularStd-Book,Arial,Helvetica,sans-serif;
-    scroll-behavior: smooth !important;
+    background: #edf6f9; /* Light background */
+    font-family: CircularStd-Book, Arial, Helvetica, sans-serif; /* Your chosen font stack */
+    scroll-behavior: smooth; /* Smooth scrolling for anchor links */
+    overflow-x: hidden; /* Prevent horizontal scroll issues */
+    color: var(--color-secondary); /* Default text color */
+    line-height: 1.6; /* Improved readability */
 }
 
 h2 {
-    font-size: 3rem;
+    font-size: 2.5rem; /* Adjusted for better mobile scaling */
     text-align: center;
-    margin: 1rem;
-    color: #ff1e56;
+    margin: 2rem 0 1rem; /* More vertical margin for sections */
+    color: var(--color-primary);
 }
 
 h3 {
-  font-size: 2rem;
-  margin: 1rem;
+    font-size: 1.8rem; /* Adjusted for better mobile scaling */
+    margin: 1rem 0;
+    color: var(--color-secondary); /* Default heading color */
 }
-  
+
+p {
+    margin-bottom: 1rem; /* Consistent paragraph spacing */
+}
+
+/* General link styling */
+a {
+    color: var(--color-primary);
+    transition: var(--transition);
+}
+
+a:hover {
+    color: darken(var(--color-primary), 10%); /* This is for preprocessors like Sass. For plain CSS, use a specific color. */
+    color: #cc1a49; /* Example: A slightly darker shade of --color-primary */
+}
+
+
+/* Re-evaluate your `.container` usage. It should wrap content to constrain width. */
+.container {
+    width: 90%; /* Fluid width for smaller screens */
+    max-width: var(--container-width-lg); /* Maximum width on larger screens */
+    margin: 0 auto; /* Center the container */
+    padding: 0 var(--container-padding); /* Apply horizontal padding */
+}
+
+/* Buttons */
 .btn {
-  margin: 1rem;
-  padding: 15px 40px;
-  border: 1px solid #000;
-  border-radius: 38px;
-  color: #fff;
-  cursor: pointer;
+    display: inline-block; /* Allows side-by-side or block behavior */
+    padding: 15px 40px;
+    border: 1px solid var(--color-black); /* Default border to black */
+    border-radius: var(--border-radius-large); /* Consistent large radius */
+    color: var(--color-white); /* Default text color for buttons */
+    cursor: pointer;
+    font-weight: 700;
+    text-align: center; /* Center text within button */
+    transition: var(--transition);
+    white-space: nowrap; /* Prevent button text from wrapping */
+    font-size: 1rem; /* Ensure readable font size */
+    margin: 0.5rem; /* Space between multiple buttons */
 }
 
 .btn:hover {
-  color: #ffffff;
-  background-color: #000;
-  transition: 0.3s ease-in-out;
-}
-
-.btn-contact {
-  font-weight: 700;
-  letter-spacing: 1.5px;
-}
-
-/*  
-  img {
-    border-radius: 10px;
-  }
-  
-  img::hover {
-    border-radius: 3px solid red;
-  }
-/*    */
-  /* .container {
-    background-image:url(images/headphones_hero_1.jpg);
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size:cover;
-    height:fit-content;
-  
-  } */ */
-
-/* ================ NAVIGATION BAR ================ */
-nav {
-  width: 100%;
-   position: fixed;
-  top: 0;
-  /* z-index: 11;
-  overflow: hidden; */
-}
-
-.nav__container {
-  background: #ff1e56;
-  padding: .8rem 8rem;
-  height: 100%;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-.nav__container-who {
-  display: flex;
-  align-items: center;
-}
-
-.nav__container-image {
-  width: 4rem;
-  height: 4rem;
-  border-radius: 38px;
-  cursor: pointer;
-}
-
-nav button {
-  display: none;
-}
-
-.nav__container a {
-  margin-left: 2rem;
-  font-weight: 700;
-  color: #fff;
-}
-.nav__menu {
-  margin-right: 10rem;
-  display: flex;
-  align-items: center;
-  gap: 1rem;
-  font-weight: bold;
-}
-
-/* ================ NAVIGATION BAR END ================ */
-  
-/* ===== INTRO SECTION ===== */
-header {
-    height: 100vh; /* Make the header take up the full height of the viewport */
-    display: flex; /* Make the header a flex container */
-    justify-content: center; /* Horizontally center its child (.intro) */
-    align-items: center; /* Vertically center its child (.intro) */
-    width: 100%; /* Ensure header takes full width */
-}
-
-.intro {
-    /* Optional: Limit the width of the intro content for better readability */
-    max-width: 1200px; /* Or adjust as needed */
-    width: 90%; /* To ensure it's responsive but doesn't stretch too wide */
-    padding: 20px; /* Add some padding around the content */
-    box-sizing: border-box; /* Include padding in the element's total width/height */
-
-    /* If you want intro--1 and intro--2 to be side-by-side within .intro */
-    display: flex;
-    flex-wrap: wrap; /* Allows items to wrap on smaller screens */
-    justify-content: center; /* Centers intro--1 and intro--2 horizontally within .intro */
-    align-items: center; /* Aligns intro--1 and intro--2 vertically if they have different heights */
-    gap: 40px; /* Space between intro--1 and intro--2 */
-    
-    /* Optional: A background color or border to visualize the intro box */
-    /* background-color: #f0f0f0; */
-    /* border: 1px solid #ccc; */
-    /* border-radius: 8px; */
-}
-
-/* Basic styling for the inner divs for layout demonstration */
-.intro--1 {
-    flex: 1; /* Allows it to grow and shrink */
-    min-width: 300px; /* Ensures it doesn't get too small */
-    text-align: center; /* Center align text inside intro--1 */
-}
-
-.intro--2 {
-    flex: 1; /* Allows it to grow and shrink */
-    min-width: 300px; /* Ensures it doesn't get too small */
-    text-align: center; /* For centering the image */
-}
-
-.intro--2 img {
-    max-width: 100%; /* Make image responsive */
-    height: auto;
-    display: block; /* Remove extra space below image */
-    margin: 0 auto; /* Center the image itself if its container is wider */
-}
-
-/* --- General element styling for the content within intro--1 --- */
-/* (You can adjust these to your design preferences) */
-.intro--1 h1 {
-    font-size: 2.8em;
-    margin-bottom: 0.2em;
-    color: #333;
-}
-
-.intro--1 span {
-    font-size: 1.8em;
-    color: #007bff;
-    font-weight: bold;
-    display: block; /* Ensures it takes its own line */
-    margin-bottom: 0.5em;
-}
-
-.intro--1 .job_title {
-    font-size: 1.1em;
-    color: #666;
-    margin-bottom: 1.5em;
-}
-
-.intro--1 p {
-    font-size: 1em;
-    line-height: 1.6;
-    color: #555;
-    margin-bottom: 1.5em;
-    max-width: 500px; /* Prevent text from becoming too wide */
-    margin-left: auto;
-    margin-right: auto;
-}
-
-.btn {
-    padding: 12px 25px;
-    border: none;
-    border-radius: 25px; /* More rounded buttons */
-    cursor: pointer;
-    font-size: 1em;
-    font-weight: bold;
-    margin: 5px;
-    transition: background-color 0.3s ease;
+    background-color: var(--color-black); /* Hover effect */
+    color: var(--color-white);
 }
 
 .btn-primary {
-    background-color: #007bff;
-    color: white;
+    background-color: var(--color-primary);
+    border-color: var(--color-primary); /* Match border to background */
+    color: var(--color-secondary); /* Text color for primary button */
 }
 
 .btn-primary:hover {
-    background-color: #0056b3;
+    background-color: var(--color-secondary);
+    border-color: var(--color-secondary);
+    color: var(--color-white);
 }
 
 .btn-secondary {
-    background-color: #6c757d;
-    color: white;
+    background-color: var(--color-secondary);
+    border-color: var(--color-secondary);
+    color: var(--color-white);
 }
 
 .btn-secondary:hover {
-    background-color: #5a6268;
+    background-color: var(--color-primary);
+    border-color: var(--color-primary);
+    color: var(--color-white);
 }
 
 .btn-secondary a {
-    color: inherit;
+    color: inherit; /* Inherit color from the button */
     text-decoration: none;
 }
 
-/* Basic body styling to remove default margins */
-body {
-    margin: 0;
-    font-family: Arial, sans-serif;
-}
-/* ===== INTRO SECTION END ===== */
-
-/* ===== ABOUT SECTION ===== */ 
-.about {
-  margin-top: 5rem;
-  /* margin-left: 10rem; */
-}
-
-.about__container {
-  min-height: 100vh;
+.btn-small {
+    padding: 0.6rem 1.2rem;
+    font-size: 0.9rem;
+    border-radius: var(--border-radius-default); /* Smaller radius for smaller buttons */
 }
 
 .line-hr {
-  width: 120px;
-  height: 5px;
-  background-color: #ff1e56;
-  margin: 0 auto;
+    width: 120px;
+    height: 5px;
+    background-color: var(--color-primary);
+    margin: 0 auto 2rem; /* Centered with bottom margin */
+}
+
+/* Images and videos general responsive styles */
+img, video {
+    max-width: 100%;
+    height: auto;
+    display: block; /* Removes extra space below inline images */
+}
+
+/* ================ NAVIGATION BAR ================ */
+nav {
+    width: 100%;
+    position: fixed; /* Fixed navigation bar */
+    top: 0;
+    left: 0;
+    z-index: 100; /* Ensure it stays on top */
+    background: var(--color-primary); /* Background for the entire nav */
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2); /* Subtle shadow */
+}
+
+.nav__container {
+    height: 4.5rem; /* Consistent height for the nav bar */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 var(--container-padding); /* Use container padding */
+}
+
+.nav__container-who {
+    display: flex;
+    align-items: center;
+    gap: 0.8rem; /* Space between image and name */
+}
+
+.nav__container-image {
+    width: 3rem; /* Smaller image on mobile */
+    height: 3rem;
+    border-radius: 50%; /* Perfect circle */
+    object-fit: cover; /* Ensure image covers the area */
+    cursor: pointer;
+}
+
+.nav__container h4 {
+    color: var(--color-white);
+    font-size: 1.2rem; /* Readable font size */
+    margin: 0; /* Remove default h4 margin */
+}
+
+.nav__container h4:hover {
+  background-color: rgba(0,0,0,0.1); /* Subtle hover background */
+  border-radius: 20px;
+  padding: 0.5rem 0.8rem;
+  color: #071629; 
+}
+
+.nav__menu {
+    /* Initially hidden on small screens, shown by JS */
+    display: none;
+    flex-direction: column; /* Stack menu items vertically */
+    position: absolute;
+    top: 4.5rem; /* Position below the nav bar */
+    left: 0;
+    width: 100%;
+    background: var(--color-primary);
+    box-shadow: 0 5px 10px rgba(0,0,0,0.2);
+    z-index: 99; /* Below the nav but above content */
+    padding: 1rem 0; /* Padding inside the dropdown menu */
+}
+
+.nav__menu.open {
+    display: flex; /* Class added by JS to show menu */
+}
+
+.nav__menu li {
+    text-align: center;
+    padding: 0.8rem 0; /* Vertical padding for menu items */
+    border-bottom: 1px solid rgba(255,255,255,0.2); /* Light separator */
+}
+
+.nav__menu li:last-child {
+    border-bottom: none; /* No border on the last item */
+}
+
+.nav__menu a {
+    color: var(--color-white);
+    font-weight: bold;
+    font-size: 1.1rem;
+    display: block; /* Make the entire list item clickable */
+    padding: 0 1rem; /* Horizontal padding for touch target */
+}
+
+.nav__menu a:hover {
+  background-color: rgba(0,0,0,0.1); /* Subtle hover background */
+  border-radius: 20px;
+  color: #071629; 
+}
+
+/* Hamburger menu buttons (for mobile) */
+nav button {
+    display: block; /* Show hamburger icon by default on small screens */
+    background: none;
+    border: none;
+    font-size: 2rem; /* Larger icon for touch */
+    cursor: pointer;
+    color: var(--color-white); /* Color of the icon */
+}
+
+#close-menu-btn {
+    display: none; /* Hide close button by default */
+}
+
+/* ================ NAVIGATION BAR END ================ */
+
+
+/* ================ INTRO SECTION ===== */
+header {
+    min-height: 100vh; /* Ensures the header section always takes up at least the full screen height */
+    display: flex;
+    justify-content: center; /* Horizontally centers the .intro box within the header */
+    align-items: center;   /* Vertically centers the .intro box within the header */
+    padding: 8rem 0 5rem; /* Provides space for the fixed nav and bottom spacing */
+    width: 100%;
+}
+
+.intro {
+    /* --- Base Styles (Mobile-first defaults: for phones) --- */
+    width: 90%; /* Allows the intro box to take up most of the screen width on mobile */
+    max-width: var(--container-width-sm); /* Caps the width on larger phones/small tablets to prevent excessive stretching */
+    
+    height: auto; /* Height adapts to its content naturally */
+    max-height: 90vh; /* Ensures it doesn't take up more than 90% of the viewport height on mobile */
+
+    display: flex;
+    flex-direction: column; /* **Default to column for mobile stacking of text and image** */
+    align-items: center; /* Centers items horizontally within the column */
+    gap: 1.5rem; /* Space between the text block and image on mobile */
+
+    background-color: #f0f0f0;
+    border-radius: var(--border-radius-large);
+    text-align: center; /* Centers text for the mobile columnar layout */
+    box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+    margin: auto; /* Ensures the box remains centered */
+    padding: 2rem; /* Comfortable padding inside the box for mobile */
+    overflow: hidden; /* Prevents unwanted scrollbars within the box */
+}
+
+/* --- intro--1 (TEXT CONTENT) adjustments for mobile (base styles) --- */
+.intro--1 {
+    flex: 1 1 auto; /* Allows it to grow/shrink based on content, prevents stretching */
+    min-width: 0; /* Important for flex items to prevent overflow with long content */
+    text-align: center; /* Ensures text is centered within its own column */
+}
+
+.intro--1 h1 {
+    /* Responsive font size: min (for smallest screens), preferred (scales with viewport), max (for largest mobile screens) */
+    font-size: clamp(0.9rem, 3.5vw, 1.4rem);
+    margin-bottom: 0.5rem;
+    color: var(--color-secondary);
+}
+
+.intro--1 span {
+    font-size: clamp(0.9rem, 3.5vw, 1.4rem); /* Responsive font size for the gradient text */
+    font-weight: bold;
+    display: block;
+    margin-bottom: 0.5rem;
+    background: linear-gradient(to right, var(--color-primary), #071629, var(--color-primary));
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    background-size: 200% 100%;
+    animation: gradientShift 4s linear infinite;
+}
+
+/* @keyframes gradientShift: This animation is correct as is and should remain in your CSS. */
+
+.intro--1 .job_title {
+    font-size: clamp(1em, 3.5vw, 1.2em); /* Responsive font size */
+    color: #666;
+    margin-bottom: 1em; /* Slight increase for better spacing */
+}
+
+.intro--1 p {
+    font-size: clamp(0.95rem, 3vw, 1.1rem); /* Responsive font size */
+    line-height: 1;
+    color: #071629;
+    margin-bottom: 1.5em; /* Good spacing after paragraph */
+    max-width: 100%;
+    text-align: center; /* Ensures text is centered within its paragraph */
+}
+
+/* --- intro--2 (IMAGE) adjustments for mobile (base styles) --- */
+.intro--2 {
+    flex: 1 1 auto; /* Allows it to take up available space */
+    min-width: 0;
+    text-align: center; /* Center the image horizontally */
+}
+
+.intro--2 img {
+    width: 100%; /* Image always tries to fill its container */
+    max-width: 300px; /* **Increased slightly for better presence on mobile** */
+    height: auto;
+    border-radius: var(--border-radius-large);
+    transition: var(--transition);
+}
+
+.intro--2 img:hover {
+    transform: scale(1.2); /* Keep a subtle scale, avoid extreme changes */
+    box-shadow: 0 0 15px rgba(0,0,0,0.2);
+    opacity: .3; /* Ensure opacity remains normal */
+    cursor: pointer;
+}
+
+---
+
+### Media Queries for Tablet and Desktop
+
+```css
+/* ==================================== */
+/* === MEDIA QUERIES FOR RESPONSIVENESS === */
+/* ==================================== */
+
+/* --- Tablet and larger devices (e.g., min-width: 768px) --- */
+@media screen and (min-width: 768px) {
+    /* ... (Your existing Navigation Bar styles remain unchanged) ... */
+
+    /* Header Section */
+    .intro {
+        flex-direction: row; /* **Switch to row layout for tablet (side-by-side)** */
+        justify-content: center; /* Centers the two columns horizontally */
+        align-items: center; /* Vertically centers the text and image sections */
+        
+        gap: 3.5rem; /* Increased space between text and image for tablets */
+        padding: 3rem; /* More generous padding inside the intro box for tablets */
+        
+        max-width: 850px; /* **Balanced max-width for tablet, preventing it from being too big** */
+        max-height: 65vh; /* Controlled max-height for tablets, leaving room for other content */
+    }
+
+    .intro--1 {
+        text-align: left; /* Align text to the left when side-by-side */
+    }
+
+    /* --- intro--1 (TEXT CONTENT) adjustments for tablet --- */
+    .intro--1 h1 {
+        font-size: clamp(2.8rem, 4vw, 3.2rem); /* Adjusted font size for tablet */
+        margin-bottom: 1rem;
+    }
+
+    .intro--1 span {
+        font-size: clamp(2rem, 3vw, 2.5rem); /* Adjusted font size for tablet */
+        margin-bottom: 1rem;
+    }
+
+    .intro--1 .job_title {
+        font-size: clamp(1.2em, 1.5vw, 1.3em);
+        margin-bottom: 1.2em;
+    }
+
+    .intro--1 p {
+        font-size: clamp(1rem, 1.2vw, 1.1rem);
+        line-height: 1.6;
+        margin-bottom: 1.5em;
+    }
+
+    /* --- intro--2 (IMAGE) adjustment for tablet --- */
+    .intro--2 img {
+        max-width: 380px; /* Optimized image size for tablet */
+    }
+
+    /* ... (Your existing About, Projects, etc., sections remain unchanged) ... */
+}
+
+/* --- Larger desktop devices (e.g., min-width: 1024px) --- */
+@media screen and (min-width: 1024px) {
+    /* ... (Your existing container and nav styles remain unchanged) ... */
+
+    .intro {
+        flex-direction: row; /* Ensure side-by-side */
+        justify-content: center;
+        align-items: center;
+        
+        gap: 6rem; /* More generous gap for large desktops */
+        padding: 4rem; /* More generous padding */
+        
+        max-width: 1100px; /* **Set a clear max-width for the intro box on large screens** */
+        max-height: 75vh; /* Max height to maintain proportion on tall screens */
+    }
+
+    /* --- intro--1 (TEXT CONTENT) adjustments for desktop --- */
+    .intro--1 h1 {
+        font-size: clamp(3.5rem, 4.5vw, 4rem); /* Larger, but capped for desktop */
+        margin-bottom: 1.2rem;
+    }
+
+    .intro--1 span {
+        font-size: clamp(2.5rem, 3.5vw, 3rem); /* Larger, but capped for desktop */
+        margin-bottom: 1.2rem;
+    }
+
+    .intro--1 .job_title {
+        font-size: clamp(1.3em, 1.6vw, 1.5em);
+        margin-bottom: 1.5em;
+    }
+
+    .intro--1 p {
+        font-size: clamp(1.1rem, 1.3vw, 1.2rem);
+        line-height: 1.7;
+        margin-bottom: 2em;
+    }
+
+    /* --- intro--2 (IMAGE) adjustment for desktop --- */
+    .intro--2 img {
+        max-width: 700px; /* Larger image for desktop */
+    }
+    
+    /* ... (Your existing h2, h3, about, projects styles remain unchanged) ... */
+}
+/* ===== INTRO SECTION END ===== */
+
+/* ===== ABOUT SECTION ===== */
+.about {
+    padding: 4rem 0; /* Add top and bottom padding */
+    text-align: center;
 }
 
 .about__container-info {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  margin: 0 auto;
-  text-align: center;
-  padding: 2rem 4rem;
-  gap: 2rem;
+    display: flex; /* Use flexbox for easier responsive stacking */
+    flex-direction: column; /* Stack items vertically on mobile */
+    gap: 2rem; /* Gap between cards */
+    padding: 2rem var(--container-padding); /* Padding for the info container */
+}
+
+.about__container-info > div { /* Target the individual info cards */
+    background-color: var(--color-white);
+    padding: 2rem;
+    border-radius: var(--border-radius-large);
+    box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+    transition: var(--transition);
+}
+
+.about__container-info > div:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+}
+
+.about__container-info h3 {
+    color: var(--color-primary); /* Consistent heading color */
 }
 
 video {
-  border-radius: 38px;
+    border-radius: var(--border-radius-large);
+    width: 100%; /* Make video responsive */
+    height: auto;
 }
 
 .description {
-  margin-top: 4rem;
+    margin-top: 1.5rem;
+    color: #555;
+    font-size: 1rem;
 }
 
 /* ===== ABOUT SECTION END ===== */
 
 /* ===== PROJECTS SECTION ===== */
 .pi {
-  text-align: center;
-  margin-top: 1rem;
-  color: #474747;
+    text-align: center;
+    margin-top: 1rem;
+    margin-bottom: 2rem; /* Added margin for separation */
+    color: #474747;
+    font-size: 1.1rem;
 }
 
 .projects {
-  padding: 6rem 0; 
-  background-color: #f8f8f8; 
-}
-
-.projects h2 {
-  margin-bottom: 1rem; 
-}
-
-.section-description {
-  text-align: center;
-  max-width: 700px;
-  margin: 0 auto 4rem;
-  font-size: 1.1rem;
-  color: #555;
+    padding: 4rem 0;
+    background-color: #f8f8f8;
 }
 
 .projects__grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); 
-    gap: 3rem; 
-    max-width: var(--container-width-lg); 
+    /* On mobile, stack them in a single column */
+    grid-template-columns: 1fr;
+    gap: 2rem; /* Space between project cards */
+    max-width: var(--container-width-lg);
     margin: 0 auto;
-    padding: 0 1.5rem;
-    margin-top: 1rem; 
+    padding: 0 var(--container-padding);
+    margin-top: 1rem;
 }
 
 .project-card {
     background-color: var(--color-white);
-    border-radius: 12px;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08); 
-    overflow: hidden; 
+    border-radius: var(--border-radius-default);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+    overflow: hidden;
     transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
-    display: flex; 
+    display: flex;
     flex-direction: column;
 }
 
 .project-card:hover {
-    transform: translateY(-5px); 
+    transform: translateY(-5px);
     box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
 }
 
 .project-image {
     width: 100%;
-    height: 200px; 
+    height: 200px;
     overflow: hidden;
-    background-color: #eee; 
+    background-color: #eee;
 }
 
 .project-image img {
     width: 100%;
     height: 100%;
-    object-fit: cover; 
-    display: block; 
+    object-fit: cover;
+    display: block;
     transition: transform 0.3s ease-in-out;
 }
 
 .project-card:hover .project-image img {
-    transform: scale(1.05); 
+    transform: scale(1.05);
 }
 
 .project-info {
     padding: 1.5rem;
-    flex-grow: 1; 
+    flex-grow: 1;
     display: flex;
     flex-direction: column;
-    justify-content: space-between; 
+    justify-content: space-between;
 }
 
 .project-info h3 {
-    font-size: 1.6rem;
+    font-size: 1.4rem; /* Adjusted for smaller screens */
     color: var(--color-secondary);
-    margin-top: 0; 
+    margin-top: 0;
     margin-bottom: 0.8rem;
-    text-align: left; 
-
+    text-align: left;
 }
 
 .project-description {
     font-size: 0.95rem;
-    color: #666;
+    color: #071629;
     line-height: 1.6;
     margin-bottom: 1rem;
-    text-align: left; 
+    text-align: left;
 }
 
 .project-tech-stack {
     margin-top: 1rem;
     margin-bottom: 1.5rem;
     display: flex;
-    flex-wrap: wrap; 
-    gap: 0.5rem; 
+    flex-wrap: wrap;
+    gap: 0.5rem;
 }
 
 .project-tech-stack span {
-    background-color: #e0e0e0; /* Light background for tags */
+    background-color: #e0e0e0;
     color: #444;
     padding: 0.4em 0.8em;
     border-radius: 5px;
     font-size: 0.8rem;
     font-weight: 600;
-    white-space: nowrap; /* Prevent tags from breaking */
+    white-space: nowrap;
 }
 
 .project-links {
     display: flex;
-    gap: 1rem;
-    margin-top: auto; /* Pushes links to the bottom of the card */
+    flex-direction: column; /* Stack buttons vertically on small screens */
+    gap: 0.8rem; /* Space between stacked buttons */
+    margin-top: auto;
 }
 
 .btn-small {
+    width: 100%; /* Make buttons full width on small screens */
+    text-align: center;
     padding: 0.6rem 1.2rem;
     font-size: 0.9rem;
-    border-radius: 8px; /* Slightly less rounded than main buttons */
+    border-radius: var(--border-radius-default);
 }
 
 .btn-live {
-    background-color: var(--color-primary); /* Use your primary color */
+    background-color: var(--color-primary);
     color: var(--color-white);
     border-color: var(--color-primary);
 }
 
 .btn-live:hover {
-    background-color: darken(var(--color-primary), 10%); /* If using Sass, else pick a darker shade */
-    background-color: #cc1a49; /* Example darker shade */
+    background-color: #cc1a49;
     border-color: #cc1a49;
 }
 
 .btn-github {
-    background-color: var(--color-secondary); /* Use your secondary color or black */
+    background-color: var(--color-secondary);
     color: var(--color-white);
     border-color: var(--color-secondary);
 }
 
 .btn-github:hover {
-    background-color: darken(var(--color-secondary), 10%); /* If using Sass */
-    background-color: #05101c; /* Example darker shade */
+    background-color: #05101c;
     border-color: #05101c;
 }
 
-/* Optional: View More on GitHub button */
 .view-more-projects {
     text-align: center;
-    margin-top: 4rem;
+    margin-top: 3rem; /* Adjusted margin */
 }
 
-/* --- Responsive Adjustments --- */
-@media screen and (max-width: 768px) {
-    .projects__grid {
-        grid-template-columns: 1fr; /* Stack cards on very small screens */
-        padding: 0 1rem; /* Less padding */
-    }
-
-    .project-card {
-        max-width: 400px; /* Limit card width on small screens */
-        margin: 0 auto; /* Center individual cards */
-    }
-
-    .project-links {
-        flex-direction: column; /* Stack buttons vertically on small screens */
-        gap: 0.8rem;
-    }
-
-    .btn-small {
-        width: 100%; /* Make buttons full width */
-        text-align: center;
-    }
-}
-
-/* ===== PROJECTS SECTION ===== */
+/* ===== PROJECTS SECTION END ===== */
 
 /* ===== CONTACT SECTION ===== */
 .contact {
-  height: 50vh;
-  border: 5px solid #ff1e56;
+    padding: 4rem 0; /* Consistent padding */
+    text-align: center;
+    /* The border here might be specific. If not needed, remove it. */
+    /* border: 5px solid #ff1e56; */
+    min-height: 40vh; /* Ensure some height for content */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.contact h2 {
+    margin-bottom: 1rem;
+}
+
+.contact .pi {
+    font-size: 1.1rem;
+    margin-bottom: 1.5rem;
+    color: #555;
+    max-width: 600px; /* Constrain width for readability */
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.contact .row h2 { /* "Let's work together" */
+    font-size: 2rem; /* Adjusted for mobile */
+    margin-bottom: 1rem;
+    color: var(--color-secondary);
+}
+
+.contact .row p {
+    max-width: 600px;
+    margin: 0 auto 2rem;
+    font-size: 1rem;
+    line-height: 1.8;
+    padding: 0 var(--container-padding); /* Ensure text doesn't hit edges */
 }
 
 .shoot-message {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin-top: 2rem;
+    margin-top: 1.5rem;
 }
 
 /* ===== CONTACT SECTION END ===== */
 
 /* ===== FOOTER ===== */
-.socialmedia {
-  margin: 0 auto;
-  box-sizing: border-box;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  
+.footer {
+    background-color: var(--color-secondary); /* Dark background for footer */
+    color: var(--color-white);
+    padding: 2.5rem 0;
+    text-align: center;
 }
+
+.socialmedia {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1.5rem; /* Space between icons */
+    margin-bottom: 1.5rem;
+}
+
 .sa-icons {
-  margin-top: 2rem;
-  border-radius: 50px;
-  width: 100px;
-  height: 100px;
-  text-decoration: none;
-  transition: var(--transition);
-  font-size: 2em;
-  /* background-color: #fff; */
+    color: var(--color-white);
+    font-size: 2rem; /* Size of social icons */
+    transition: var(--transition);
+    /* Removed width/height/border-radius as it's typically for actual shapes, not just icons */
+}
+
+.sa-icons:hover {
+    color: var(--color-primary); /* Hover color for social icons */
 }
 
 .signature {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  font-size: 1.5rem; 
-  color: #474747;
-  margin-bottom: 2rem;
+    font-size: 0.9rem; /* Smaller font for copyright */
+    color: rgba(255,255,255,0.7); /* Slightly faded copyright text */
+    margin-bottom: 0; /* Remove extra margin if already centered */
 }
+
 /* ===== FOOTER SECTION END ===== */
+
+
+/* ==================================== */
+/* === MEDIA QUERIES FOR RESPONSIVENESS === */
+/* ==================================== */
+
+/* --- Tablet and larger devices (e.g., min-width: 768px) --- */
+@media screen and (min-width: 768px) {
+    /* Navigation Bar */
+    .nav__container {
+        height: 5rem; /* Slightly taller nav on larger screens */
+    }
+    .nav__container-image {
+        width: 4rem; /* Larger logo */
+        height: 4rem;
+    }
+    .nav__container h4 {
+        font-size: 1.5rem;
+    }
+
+    .nav__menu {
+        display: flex; /* Show the navigation menu */
+        flex-direction: row; /* Arrange items horizontally */
+        position: static; /* Remove absolute positioning */
+        box-shadow: none; /* Remove shadow */
+        width: auto; /* Reset width */
+        justify-content: flex-end; /* Align menu items to the right */
+        padding: 0; /* Remove menu specific padding */
+    }
+
+    .nav__menu li {
+        padding: 0 1rem; /* Horizontal padding for menu items */
+        border-bottom: none; /* Remove border on larger screens */
+    }
+
+    .nav__menu a {
+        font-size: 1rem;
+    }
+
+    nav button {
+        display: none; /* Hide hamburger icons on larger screens */
+    }
+
+    /* Header Section */
+    .intro {
+        flex-direction: row; /* Arrange header content side-by-side */
+        justify-content: center;
+        gap: 3rem; /* More space between text and image */
+        padding: 3rem; /* More padding for the intro box */
+        max-width: var(--container-width-md); /* Keep it contained */
+    }
+
+    .intro--1 {
+        text-align: left; /* Align text to the left */
+    }
+
+    .intro--1 h1 {
+        font-size: 3em;
+    }
+
+    .intro--1 span {
+        font-size: 2.2em;
+    }
+
+    .intro--1 .job_title {
+        font-size: 1.2em;
+    }
+
+    .intro--1 p {
+        font-size: 1em;
+        text-align: left;
+    }
+
+    .intro--2 img {
+        max-width: 350px; /* Control image size more precisely */
+    }
+
+    /* About Section */
+    .about__container-info {
+        flex-direction: row; /* Arrange cards in a row */
+        justify-content: center;
+        flex-wrap: wrap; /* Allow cards to wrap if needed */
+        gap: 2rem;
+    }
+
+    .about__container-info > div {
+        flex: 1; /* Allows them to share space */
+        min-width: 280px; /* Minimum width for cards before wrapping */
+        max-width: 350px; /* Max width to prevent them from becoming too wide */
+    }
+
+    /* Projects Section */
+    .projects__grid {
+        /* Two columns for tablets */
+        grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+        gap: 2.5rem;
+    }
+
+    .project-links {
+        flex-direction: row; /* Buttons side-by-side again */
+        justify-content: flex-start;
+    }
+
+    .btn-small {
+        width: auto; /* Reset width for side-by-side */
+    }
+}
+
+/* --- Larger desktop devices (e.g., min-width: 1024px) --- */
+@media screen and (min-width: 1024px) {
+    .container {
+        padding: 0 var(--container-padding); /* Re-apply default padding */
+    }
+
+    .nav__container {
+        padding: 0 8rem; /* Restore original padding for very large screens */
+    }
+
+    .nav__menu {
+        margin-right: 10rem; /* Restore original margin */
+    }
+
+    .nav__menu li {
+        padding: 0 1.5rem; /* More spacing for menu items */
+    }
+
+    .intro {
+        flex-direction: row; /* Ensure side-by-side */
+        gap: 6rem; /* Larger gap */
+        padding: 4rem; /* More padding */
+        max-width: var(--container-width-lg); /* Use max container width */
+    }
+
+    .intro--1 h1 {
+        font-size: 3.5em; /* Larger headings */
+    }
+
+    .intro--1 span {
+        font-size: 2.8em;
+    }
+
+    .intro--1 p {
+        font-size: 1.1em;
+    }
+
+    .intro--2 img {
+        max-width: 450px; /* Larger image */
+    }
+
+    h2 {
+        font-size: 3rem; /* Original large heading size */
+    }
+
+    h3 {
+        font-size: 2rem; /* Original heading size */
+    }
+
+    .about__container-info {
+        gap: 3rem; /* Larger gap for about cards */
+    }
+
+    .about__container-info > div {
+        max-width: 380px; /* Adjust max width for slightly larger cards */
+    }
+
+    .projects__grid {
+        /* Three columns for larger desktops */
+        grid-template-columns: repeat(2, 1fr);
+        gap: 3rem; /* Original gap */
+         max-width: 900px; /* Was var(--container-width-lg) which is 1200px. Reduced for a more contained 2-column layout. */
+        padding: 0 2rem;
+    }
+
+    /* You might also want to adjust project card internal padding if content feels cramped */
+  
+
+    /* If project info text also feels too large on desktop */
+    .project-info h3 {
+        font-size: 1.8rem; /* Adjust from 1.4rem (tablet) or previous desktop size if needed */
+    }
+    .project-description {
+        font-size: 1rem; /* Adjust from 0.95rem (tablet) if needed */
+    }
+    .project-tech-stack span {
+        font-size: 0.85rem; /* Adjust if needed */
+    }
+}
+
+/* ==================================== */
+/* === JavaScript for Mobile Menu Toggle (Add this to script.js) === */
+/* ==================================== */
+
+/*
+// script.js
+document.addEventListener('DOMContentLoaded', () => {
+    const openMenuBtn = document.getElementById('open-menu-btn');
+    const closeMenuBtn = document.getElementById('close-menu-btn');
+    const navMenu = document.querySelector('.nav__menu');
+
+    openMenuBtn.innerHTML = '<i class="fa-solid fa-bars"></i>'; // Font Awesome hamburger
+    closeMenuBtn.innerHTML = '<i class="fa-solid fa-times"></i>'; // Font Awesome X
+
+    openMenuBtn.addEventListener('click', () => {
+        navMenu.classList.add('open');
+        openMenuBtn.style.display = 'none';
+        closeMenuBtn.style.display = 'block';
+    });
+
+    closeMenuBtn.addEventListener('click', () => {
+        navMenu.classList.remove('open');
+        closeMenuBtn.style.display = 'none';
+        openMenuBtn.style.display = 'block';
+    });
+
+    // Close menu when a navigation link is clicked (for single-page navigation)
+    navMenu.querySelectorAll('a').forEach(link => {
+        link.addEventListener('click', () => {
+            if (window.innerWidth <= 768) { // Only close on smaller screens
+                navMenu.classList.remove('open');
+                closeMenuBtn.style.display = 'none';
+                openMenuBtn.style.display = 'block';
+            }
+        });
+    });
+});
+*/
