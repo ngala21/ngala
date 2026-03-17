@@ -1,0 +1,45 @@
+/*
+** A Totally Real Project by a total "Software Engineer"
+@ author - Ngala21
+**
+*/
+
+:root {
+    --bg: #f4f3ef;
+    --bg2: #eceae3;
+    --surface: #ffffff;
+    --surface2: #f0ede6;
+    --border: #d8d3c8;
+    --text: #1a1916;
+    --text2: #5a5650;
+    --text3: #8a867f;
+    --accent: #1a6b4a;
+    --accent2: #0f4d35;
+    --accent-glow: rgba(26,107,74,0.18);
+    --cyan: #0e7c7b;
+    --cyan-glow: rgba(14,124,123,0.15);
+    --warn: #c0392b;
+    --card-shadow: 0 2px 20px rgba(0,0,0,0.7); 
+    --card-shadow-hover: 0 8px 40px rgba(0,0,0,0.13); 
+    --nav-bg:rgba(244,244,239,0.92); 
+    --matrix-fade:rgba(244,243,239,0.08); 
+    --matrix-color:rgba(26,107,74,0.07);
+    --t: 0.35s cubic-bezier(0.4,0,0.2,1);
+    --container: 1200px;
+    --r-sm: 8px;
+    --r-md: 12px;
+    --r-lg: 16px;
+    --r-xl: 24px; 
+}
+
+/* ===== RESET ================================================= */
+*,*::before,*::after { box-sizing: border-box; margin: 0; padding: 0; } 
+html { scroll-behavior: smooth; font-size: 16px; }
+body {
+    font-family: 'DM Sans',system-ui,sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    line-height: 1.6;
+    transition: background-color var(--t), color var(--t);
+    overflow-x: hidden;
+}
