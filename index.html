@@ -6,6 +6,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="description" content="Ngala Mike — Junior Frontend  Developer and Cyber Security Engineer based in Nairobi, Kenya. Building solid, scalable software with great user experiences." />
     <meta name="author" content="Ngala Mike">
+    <meta property="og:title" content="Ngala Mike · Frontend Developer & Cyber Security" />
+    <meta property="og:description" content="Junior Frontend Developer in Nairobi. React · JS · HTML5 · Cyber Security. Open to work." />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://ngala.vercel.app/" />
+
     <title>Ngala Mike · Frontend Developer & Cyber Security</title>
     <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
     <link rel="stylesheet" href="./css/style.css">
@@ -19,7 +24,117 @@
   />
 </head>
 <body>
-    <!-- ===== PRELOADER =========================================== -->
+    <!-- =====================================================================
+     PRELOADER  — dual-ring design
+     Outer ring : reverse spin · binary encoding · "SOFTWARE ENGINEERING"
+     Inner ring : forward spin · hex encoding   · "NGALA MIKE"
+     ===================================================================== -->
+    <div id="preloader" role="status" aria-labelledby="Loading Portfolio">
+
+        <div class="pre-dual-rings">
+
+            <!-- OUTER RING  (reverse spin, binary, cyan) -->
+    <div class="pre-ring-outer">
+      <svg viewBox="0 0 180 180" width="180" height="180" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+          <path id="outer-path"
+            d="M 90,90 m -80,0 a 80,80 0 1,1 160,0 a 80,80 0 1,1 -160,0"/>
+        </defs>
+        <!--
+          "SOFTWARE ENGINEERING" in 8-bit binary, space-separated:
+          S=01010011  O=01001111  F=01000110  T=01010100  W=01010111
+          A=01000001  R=01010010  E=01000101  (space)
+          E=01000101  N=01001110  G=01000111  I=01001001
+          N=01001110  E=01000101  E=01000101  R=01010010
+          I=01001001  N=01001110  G=01000111
+        -->
+        <text>
+          <textPath href="#outer-path" startOffset="0%">
+            01010011 01001111 01000110 01010100 01010111 01000001 01010010 01000101 ·
+            01000101 01001110 01000111 01001001 01001110 01000101 01000101 01010010 01001001 01001110 01000111 ·
+          </textPath>
+        </text>
+      </svg>
+    </div>
+
+    <!-- INNER RING  (forward spin, hex, green) -->
+    <div class="pre-ring-inner">
+      <svg viewBox="0 0 128 128" width="128" height="128" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+          <path id="inner-path"
+            d="M 64,64 m -54,0 a 54,54 0 1,1 108,0 a 54,54 0 1,1 -108,0"/>
+        </defs>
+        <!--
+          "NGALA MIKE" in hex (ASCII):
+          N=4E  G=47  A=41  L=4C  A=41  (space=20)
+          M=4D  I=49  K=4B  E=45
+        -->
+        <text>
+          <textPath href="#inner-path" startOffset="0%">
+            4E 47 41 4C 41 · 4D 49 4B 45 · 4E 47 41 4C 41 · 4D 49 4B 45 ·
+          </textPath>
+        </text>
+      </svg>
+    </div>
+
+     <!-- Pulsing centre dot -->
+    <div class="pre-inner-dot"></div>
+  </div>
+
+  <div class="pre-name">Ngala <span>Mike</span></div>
+  <div class="pre-tag">
+    Full Stack Software Engineer
+    <span class="sep">·</span>
+    Cyber Security Engineer
+  </div>
+  <div class="pre-bar"><div class="pre-bar-fill"></div></div>
+</div>
+<!-- /PRELOADER -->
+
+<!-- NAV PROGRESS BAR -->
+<div id="nav-progress"></div>
+
+<!-- =====================================================================
+     NAVBAR
+     ===================================================================== -->
+<nav id="navbar">
+  <div class="nav-inner">
+    <a href="#home" class="nav-logo">
+      <div class="blink"></div>
+      &lt;ngala /&gt;
+    </a>
+    <ul class="nav-links">
+      <li><a href="#home" class="active">Home</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#services">Services</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#journey">Journey</a></li>
+      <li><a href="#contact">Contact</a></li>
+      <li><a href="#contact" class="nav-cta">Hire Me</a></li>
+    </ul>
+    <div class="nav-right">
+      <button class="theme-toggle" id="themeBtn" title="Toggle theme" aria-label="Toggle dark/light theme">
+        <span class="toggle-icon sun">☀️</span>
+        <span class="toggle-icon moon">🌙</span>
+      </button>
+      <button class="hamburger" id="hamburger" aria-label="Toggle menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+  <div class="mobile-menu" id="mobileMenu">
+    <a href="#home">Home</a>
+    <a href="#about">About</a>
+    <a href="#services">Services</a>
+    <a href="#projects">Projects</a>
+    <a href="#journey">Journey</a>
+    <a href="#contact">Contact</a>
+  </div>
+</nav>
+
+<!-- MATRIX BACKGROUND (decorative canvas) -->
+<canvas class="matrix-bg" id="matrixCanvas"></canvas>
+
     <script src="./js/app.js"></script>
 </body>
 </html>
