@@ -1027,16 +1027,13 @@ section {
     transparent 40%,
     rgba(0, 0, 0, 0.6) 100%
   );
-  opacity: 0;
-  transition: opacity var(--transition);
+  opacity: 1; 
   display: flex;
   align-items: flex-end;
   padding: 16px;
   gap: 10px;
 }
-.project-card:hover .project-overlay {
-  opacity: 1;
-}
+
 .project-overlay a {
   display: inline-flex;
   align-items: center;
