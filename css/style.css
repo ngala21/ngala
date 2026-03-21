@@ -1023,36 +1023,50 @@ section {
   position: absolute;
   inset: 0;
   background: linear-gradient(
-    to bottom,
-    transparent 40%,
-    rgba(0, 0, 0, 0.6) 100%
+    to top,
+    rgba(0, 0, 0, 0.65) 0%,
+    rgba(0, 0, 0, 0.35) 40%,
+    rgba(0, 0, 0, 0.1) 70%,
+    transparent 100%
   );
-  opacity: 1; 
   display: flex;
   align-items: flex-end;
   padding: 16px;
-  gap: 10px;
+  gap: 20px;
 }
 
 .project-overlay a {
   display: inline-flex;
   align-items: center;
-  gap: 6px;
-  background: var(--accent);
-  color: #fff;
-  font-size: 0.78rem;
+  justify-content: center;
+
+  font-size: 0.75rem;
   font-weight: 600;
-  padding: 8px 14px;
-  border-radius: 8px;
-  transition: background var(--transition);
+
+  padding: 7px 14px;
+  border-radius: 999px;
+
+  background: #ffffff;
+  color: #111;
+
+  transition: all 0.25s ease;
 }
+
+/* Hover effect (subtle, not required for visibility) */
 .project-overlay a:hover {
-  background: var(--accent2);
+  transform: translateY(-2px);
+  background: #f5f5f5;
 }
+
+/* Ghost button */
 .project-overlay a.ghost {
-  background: rgba(255, 255, 255, 0.15);
-  backdrop-filter: blur(8px);
+  background: rgba(255, 255, 255, 0.2);
+  color: #fff;
 }
+
+.project-overlay a.ghost:hover {
+  background: rgba(255, 255, 255, 0.3);
+} 
 .project-body {
   padding: 20px 22px;
   flex: 1;
@@ -1080,7 +1094,7 @@ section {
 }
 .project-tag {
   font-family: "JetBrains Mono", monospace;
-  font-size: 0.65rem;
+  font-size: 0.8rem;
   padding: 3px 10px;
   border-radius: 6px;
   background: var(--surface2);
@@ -1088,10 +1102,58 @@ section {
   color: var(--text3);
 }
 .project-tag.featured {
-  color: var(--accent);
-  border-color: var(--accent);
-  background: var(--accent-glow);
+  color: #facc15;
+  border-color: rgba(250,204,21,0.5);
+  box-shadow: 0 0 8px rgba(250,204,21,0.15);
 }
+
+/* React (blue) */
+.tag-react {
+  color: #38bdf8;
+  border-color: rgba(56,189,248,0.5);
+  box-shadow: 0 0 8px rgba(56,189,248,0.15);
+}
+
+/* Node (green) */
+.tag-html {
+  color: #4ade80;
+  border-color: rgba(74,222,128,0.5);
+  box-shadow: 0 0 8px rgba(74,222,128,0.15);
+}
+
+/* Python (yellow) */
+.tag-python {
+  color: #facc15;
+  border-color: rgba(250,204,21,0.5);
+  box-shadow: 0 0 8px rgba(250,204,21,0.15);
+}
+
+/* Tailwind (cyan/blue) */
+.tag-css {
+  color: #22d3ee;
+  border-color: rgba(34,211,238,0.5);
+  box-shadow: 0 0 8px rgba(34,211,238,0.15);
+}
+
+/* Fullstack (orange) */
+.tag-js {
+  color: #fb923c;
+  border-color: rgba(251,146,60,0.5);
+  box-shadow: 0 0 8px rgba(251,146,60,0.15);
+}
+
+/* Cybersec (purple) */
+.tag-vercel {
+  color: #a78bfa;
+  border-color: rgba(167,139,250,0.5);
+  box-shadow: 0 0 8px rgba(167,139,250,0.15);
+}
+
+.project-tag:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 0 12px currentColor;
+}
+
 .project-placeholder {
   width: 100%;
   height: 100%;
