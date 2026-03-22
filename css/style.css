@@ -1479,6 +1479,9 @@ footer {
   font-size: 1.1rem;
   color: var(--text2);
   transition: all var(--transition);
+  -webkit-tap-highlight-color: transparent;
+  will-change: transform;
+  touch-action: manipulation;
 }
 .social-icon:hover {
   border-color: var(--accent);
@@ -1493,6 +1496,21 @@ footer {
 }
 .footer-copy span {
   color: var(--accent);
+}
+
+@media (hover: hover) {
+  .social-icon:hover {
+    border-color: var(--accent);
+    color: var(--accent);
+    background: var(--accent-glow);
+    transform: translateY(-3px);
+  }
+}
+
+.social-icon:active {
+  transform: scale(0.95);
+  background: var(--accent-glow);
+  transition: transform 0.1s;
 }
 
 /* ===== BACK TO TOP ===== */
